@@ -1,5 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Providers from "./providers";
+import DarkModeToggle from "@/components/DarkModeToggle";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +13,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${inter.className} relative bg-gray-100 dark:bg-gray-900 m-0 text-black dark:text-white`}
+      >
+        <div className="absolute -top-6 right-4 z-50">
+          <DarkModeToggle />
+        </div>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
