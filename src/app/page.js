@@ -27,20 +27,47 @@ export default function MultiStepForm() {
     setFormData((prev) => ({ ...prev, ...fields }));
 
   return (
-    <div className="max-w-xl mx-auto mt-10 p-6 bg-white dark:bg-gray-800 rounded-lg text-black dark:text-white shadow">
-      <div className="flex justify-between mb-6">
-        {steps.map((label, index) => (
+    <div className="max-w-xl mx-4 sm:mx-auto mt-20 p-5 sm:p-6 bg-white dark:bg-gray-800 rounded-lg text-black dark:text-white shadow">
+      <div className="mb-6">
+        <div className="flex justify-between relative">
+          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 dark:bg-gray-600 -translate-y-1/2"></div>
+
           <div
-            key={index}
-            className={`flex-1 text-center py-2 border-b-4 ${
-              index === step
-                ? "border-blue-600 font-semibold"
-                : "border-gray-300 text-gray-500"
-            }`}
-          >
-            {label}
-          </div>
-        ))}
+            className="absolute top-1/2 left-0 h-1 bg-blue-600 -translate-y-1/2 transition-all duration-300"
+            style={{ width: `${(step / (steps.length - 1)) * 100}%` }}
+          ></div>
+
+          {steps.map((label, index) => (
+            <div key={index} className="relative z-10">
+              <button
+                onClick={() => setStep(index)}
+                className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                  index <= step
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-200 dark:bg-gray-600 text-gray-500"
+                }`}
+              >
+                {index + 1}
+              </button>
+            </div>
+          ))}
+        </div>
+        <div className="hidden md:flex justify-between mt-3 font-semibold text-blue-600">
+          {steps.map((label, index) => (
+            <span
+              key={index}
+              className={`hidden md:block text-xs text-center ${
+                index <= step ? "text-blue-600 font-medium" : "text-gray-500"
+              }`}
+            >
+              {label}
+            </span>
+          ))}
+        </div>
+
+        <div className="md:hidden text-center mt-3 font-semibold text-blue-600">
+          {steps[step]}
+        </div>
       </div>
 
       {step === 0 && (

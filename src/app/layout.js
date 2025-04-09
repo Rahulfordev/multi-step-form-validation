@@ -14,9 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} relative bg-gray-100 dark:bg-gray-900 m-0 text-black dark:text-white`}
+        className={`${inter.className} relative bg-gray-100 dark:bg-gray-900 text-black dark:text-white`}
       >
-        <div className="absolute -top-6 right-4 z-50">
+        <div className="fixed top-4 right-4 z-50">
           <DarkModeToggle />
         </div>
         <Providers>{children}</Providers>
