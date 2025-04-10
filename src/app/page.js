@@ -40,7 +40,7 @@ export default function MultiStepForm() {
           {steps.map((label, index) => (
             <div key={index} className="relative z-10">
               <button
-                onClick={() => setStep(index)}
+                // onClick={() => setStep(index)}
                 className={`w-8 h-8 rounded-full flex items-center justify-center ${
                   index <= step
                     ? "bg-blue-600 text-white"
