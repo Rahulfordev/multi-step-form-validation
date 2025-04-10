@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📟 Multi-Step Form with Validation
 
-## Getting Started
+This is a **Multi-Step Form** built using **Next.js (App Router)**, **React Hook Form**, **Zod**, and **TailwindCSS**. It collects personal information in three steps and validates each input with Zod. The final step displays a summary before submission.
 
-First, run the development server:
+---
+
+## 🚀 Tech Stack
+
+- **Next.js (App Router)**
+- **React Hook Form** – for form state and handling
+- **Zod** – for schema validation
+- **TailwindCSS** – for utility-first styling
+- **React Query** (Optional) – for simulating API submission
+- **Dark Mode** – via Tailwind's dark mode support
+
+---
+
+## 📸 Features
+
+✅ Multi-step form with 3 steps  
+✅ Field-level validation with error messages  
+✅ "Next" and "Previous" step navigation  
+✅ Final summary before submission  
+✅ Form data stored in local state  
+✅ API simulation using React Query
+✅ Responsive design for mobile users  
+✅ Dark mode toggle (TailwindCSS)
+
+---
+
+## 📁 Project Structure
+
+```
+/app
+    - layout.js
+    - page.js
+  /components
+    - DarkModeToggle.jsx
+    - providers.jsx
+    - Step1.jsx
+    - Step2.jsx
+    - Step2.jsx
+    - Summary.jsx
+    /common
+        - Button.jsx
+        - InputField.jsx
+```
+
+---
+
+## 🧑‍💻 Getting Started
+
+### 1⃣ Clone the Repository
+
+```bash
+git clone https://github.com/Rahulfordev/multi-step-form-validation.git
+cd multi-step-form-validation
+```
+
+### 2⃣ Install Dependencies
+
+Using **npm**:
+
+```bash
+npm install
+```
+
+Or using **yarn**:
+
+```bash
+yarn
+```
+
+### 3⃣ Run the Development Server
+
+Using **npm**:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or using **yarn**:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Visit [http://localhost:3000](http://localhost:3000) to see the form in action.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📃 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is open-source and available under the [MIT License](LICENSE).
