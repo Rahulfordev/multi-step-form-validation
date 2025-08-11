@@ -1,3 +1,4 @@
+"use client";
 import VerticalStepper from "../../components/VerticalStepper";
 const page = () => {
   const steps = [
