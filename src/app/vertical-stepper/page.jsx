@@ -1,7 +1,6 @@
-"use client";
-import VerticalStepper from '../../components/VerticalStepper'
+import VerticalStepper from "../../components/VerticalStepper";
 const page = () => {
-      const steps = [
+  const steps = [
     {
       label: "Select campaign settings",
       description: (
@@ -30,14 +29,16 @@ const page = () => {
       optional: "Optional",
     },
   ];
-     
-    return(
-            <div className="p-6 bg-white">
-          <VerticalStepper
-            steps={steps}
-            initialStep={0}
-            onFinish={() => console.log("Finished!")}
-          />
-        </div>
-    )
-}
+
+  return (
+    <div className="p-6 bg-white">
+      <VerticalStepper
+        steps={steps}
+        initialStep={0}
+        onFinish={() => console.log("Finished!")}
+      />
+    </div>
+  );
+};
+
+export default page;

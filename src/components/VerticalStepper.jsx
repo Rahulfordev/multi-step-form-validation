@@ -68,8 +68,8 @@ export default function VerticalStepper({ steps = [] }) {
                       isCompleted
                         ? "bg-emerald-500 border-emerald-500"
                         : isActive
-                          ? "bg-white border-blue-600 ring-4 ring-blue-100 scale-[1.05]"
-                          : "bg-white border-gray-300 scale-100",
+                        ? "bg-white border-blue-600 ring-4 ring-blue-100 scale-[1.05]"
+                        : "bg-white border-gray-300 scale-100",
                     ].join(" ")}
                   >
                     {isCompleted ? (
